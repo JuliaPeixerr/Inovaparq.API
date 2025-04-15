@@ -1,0 +1,50 @@
+# Build Folders
+bin
+obj
+debug
+release
+
+# Visual Studio temporary files, caches, and logs
+.vscode
+.vs
+.suo
+.user
+.userosscache
+.sln.docstates
+
+# Rider files
+.idea
+.DotSettings.user
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+.lnk
+
+# Packages
+.nupkg
+.snupkg
+packages
+
+# Test Results
+TestResults
+
+# Configuration
+appsettings.json
+appsettings..json
+
+# Logs
+.log
+
+# Backup & report files
+.pdb
+.cache
+.ilk
+.tmp
+.bak
+.swp
+.sln.docstates
+
+# Other IDE or editor-specific files
+_ReSharper
+.vsconfig
