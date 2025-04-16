@@ -16,12 +16,9 @@ namespace Incubadora.Project.API.Controllers
         public UsuarioController(IUsuarioFacade usuarioFacade)
             => _usuarioFacade = usuarioFacade;
 
-        [HttpPost("create")]
-        public ActionResult Create([FromBody] CreateUsuarioCommand command)
-        {
-            _usuarioFacade.Create(command);
-            return Ok();
-        }
+        [HttpPost("save")]
+        public ActionResult Save([FromBody] CreateUsuarioCommand command)
+            => Ok(_usuarioFacade.Save(command));
 
         [HttpPost("login")]
         public ActionResult Login([FromBody] LoginCommand command)

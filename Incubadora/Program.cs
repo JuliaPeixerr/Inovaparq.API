@@ -23,8 +23,12 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfigurator();
 
+// implementar mapper
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IIncubadoraRepository, IncubadoraRepository>();
+builder.Services.AddScoped<IIncubadoraStatusRepository, IncubadoraStatusRepository>();
 builder.Services.AddScoped<IUsuarioFacade, UsuarioFacade>();
+builder.Services.AddScoped<IIncubadoraFacade, IncubadoraFacade>();
 builder.Services.AddScoped<ICryptographyService, CryptographyService>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

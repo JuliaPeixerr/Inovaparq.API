@@ -3,11 +3,11 @@ using System.Linq.Expressions;
 
 namespace Incubadora.Project.Database.Finders
 {
-    public class UsuarioFinder
+    public class GenericUsuarioFinder
     {
         private string? _nome;
 
-        public UsuarioFinder Nome(string nome)
+        public GenericUsuarioFinder Nome(string nome)
         {
             _nome = nome;
             return this;

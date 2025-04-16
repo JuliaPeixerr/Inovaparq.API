@@ -1,10 +1,11 @@
 ﻿using Incubadora.Project.Domain.Command;
+using Incubadora.Project.Domain.Models;
 
 namespace Incubadora.Project.Domain.Infrastructure.Facade
 {
     public interface IUsuarioFacade
     {
-        void Create(CreateUsuarioCommand command);
+        Usuario Save(CreateUsuarioCommand command);
         void Login(LoginCommand command);
     }
 }

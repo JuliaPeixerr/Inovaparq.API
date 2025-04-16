@@ -9,8 +9,8 @@ namespace Incubadora.Project.Domain.Repository.Shared
         T? Get(int id);
         T? Get(string id);
         T? Get(Expression<Func<T, bool>> expression);
-        void Create(T entity);
-        void Update(T entity);
+        T Create(T entity);
+        T Update(T entity);
         void Delete(int id);
     }
 }

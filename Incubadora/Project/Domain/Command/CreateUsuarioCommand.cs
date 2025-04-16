@@ -2,5 +2,6 @@
 {
     public class CreateUsuarioCommand : LoginCommand
     {
+        public int? Id { get; set; }
     }
 }

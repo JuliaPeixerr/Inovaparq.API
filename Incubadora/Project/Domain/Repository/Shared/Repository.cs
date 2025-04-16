@@ -31,16 +31,18 @@ namespace Incubadora.Project.Domain.Repository.Shared
         public T? Get(Expression<Func<T, bool>> expression)
             => _dbSet.Where(expression).FirstOrDefault();
 
-        public void Create(T entity)
+        public T Create(T entity)
         {
             _dbSet.Add(entity);
             _context.SaveChanges();
+            return entity;
         }
 
-        public void Update(T entity)
+        public T Update(T entity)
         {
             _context.Update(entity);
             _context.SaveChanges();
+            return entity;
         }
 
         public void Delete(int id)

@@ -9,15 +9,15 @@ namespace Incubadora.Project.Infrastructure.Facade
 {
     public class UsuarioFacade : IUsuarioFacade
     {
-        private IUsuarioRepository _usuarioRepository;
+        private IUsuarioRepository _repository;
         private ICryptographyService _cryptographyService;
 
-        public UsuarioFacade(IUsuarioRepository usuarioRepository,
+        public UsuarioFacade(IUsuarioRepository repository,
             ICryptographyService cryptographyService)
-            => (_usuarioRepository, _cryptographyService)
-            = (usuarioRepository, cryptographyService);
+            => (_repository, _cryptographyService)
+            = (repository, cryptographyService);
 
-        public void Create(CreateUsuarioCommand command)
+        public Usuario Save(CreateUsuarioCommand command)
         {
             var cryptoPassword = _cryptographyService.Cryptograph(command.Senha);
             
@@ -25,12 +25,14 @@ namespace Incubadora.Project.Infrastructure.Facade
             entity.Nome = command.Nome;
             entity.Senha = cryptoPassword;
 
-            _usuarioRepository.Create(entity);
+            if (command.Id == null)
+                return _repository.Create(entity);
+            return _repository.Update(entity);
         }
 
         public void Login(LoginCommand command)
         {
-            var usuario = _usuarioRepository.Get(new UsuarioFinder()
+            var usuario = _repository.Get(new GenericUsuarioFinder()
                 .Nome(command.Nome).ToExpression());
 
             if (usuario == null)
