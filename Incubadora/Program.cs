@@ -25,10 +25,10 @@ builder.Services.AddSwaggerConfigurator();
 
 // implementar mapper
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-builder.Services.AddScoped<IIncubadoraRepository, IncubadoraRepository>();
-builder.Services.AddScoped<IIncubadoraStatusRepository, IncubadoraStatusRepository>();
+builder.Services.AddScoped<IStartupRepository, StartupRepository>();
+builder.Services.AddScoped<IStartupStatusRepository, StartupStatusRepository>();
 builder.Services.AddScoped<IUsuarioFacade, UsuarioFacade>();
-builder.Services.AddScoped<IIncubadoraFacade, IncubadoraFacade>();
+builder.Services.AddScoped<IStartupFacade, StartupFacade>();
 builder.Services.AddScoped<ICryptographyService, CryptographyService>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

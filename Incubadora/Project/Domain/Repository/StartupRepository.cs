@@ -5,9 +5,9 @@ using Incubadora.Project.Domain.Repository.Shared;
 
 namespace Incubadora.Project.Domain.Repository
 {
-    public class IncubadoraStatusRepository : Repository<IncubadoraStatus>, IIncubadoraStatusRepository
+    public class StartupRepository : Repository<Startup>, IStartupRepository
     {
-        public IncubadoraStatusRepository(ProjectContext context) : base(context)
+        public StartupRepository(ProjectContext context) : base(context)
         {
         }
     }

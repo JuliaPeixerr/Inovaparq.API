@@ -1,8 +1,8 @@
 ﻿namespace Incubadora.Project.Domain.Query
 {
-    public class GetAllIncubadoraQuery
+    public class GetAllStartupQuery
     {
         public string? Descricao { get; set; }
-        public int? CodigoStatus { get; set; }
+        public int? CodigoNivel { get; set; }
     }
 }

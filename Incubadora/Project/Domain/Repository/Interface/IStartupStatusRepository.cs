@@ -3,7 +3,7 @@ using Incubadora.Project.Domain.Repository.Shared;
 
 namespace Incubadora.Project.Domain.Repository.Interface
 {
-    public interface IIncubadoraStatusRepository : IRepository<IncubadoraStatus>
+    public interface IStartupStatusRepository : IRepository<StartupStatus>
     {
     }
 }

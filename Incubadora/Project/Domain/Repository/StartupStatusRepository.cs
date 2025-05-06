@@ -1,12 +1,13 @@
 ﻿using Incubadora.Project.Database;
+using Incubadora.Project.Domain.Models;
 using Incubadora.Project.Domain.Repository.Interface;
 using Incubadora.Project.Domain.Repository.Shared;
 
 namespace Incubadora.Project.Domain.Repository
 {
-    public class IncubadoraRepository : Repository<Models.Incubadora>, IIncubadoraRepository
+    public class StartupStatusRepository : Repository<StartupStatus>, IStartupStatusRepository
     {
-        public IncubadoraRepository(ProjectContext context) : base(context)
+        public StartupStatusRepository(ProjectContext context) : base(context)
         {
         }
     }

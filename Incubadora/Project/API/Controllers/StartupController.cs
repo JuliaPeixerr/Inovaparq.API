@@ -8,17 +8,17 @@ namespace Incubadora.Project.API.Controllers
 {
     [ApiController]
     [Route(URL)]
-    public class IncubadoraController : ControllerBase
+    public class StartupController : ControllerBase
     {
-        public const string URL = "incubadora";
+        public const string URL = "startup";
 
-        private IIncubadoraFacade _incubadoraFacade;
+        private IStartupFacade _incubadoraFacade;
 
-        public IncubadoraController(IIncubadoraFacade incubadoraFacade)
+        public StartupController(IStartupFacade incubadoraFacade)
             => _incubadoraFacade = incubadoraFacade;
 
         [HttpPost("save")]
-        public ActionResult Save([FromBody] SaveIncubadoraCommand command)
+        public ActionResult Save([FromBody] SaveStartupCommand command)
             => Ok(_incubadoraFacade.Save(command));
 
         [HttpGet("{id}")]
@@ -26,7 +26,7 @@ namespace Incubadora.Project.API.Controllers
             => Ok(_incubadoraFacade.Get(id));
 
         [HttpGet("all")]
-        public ActionResult GetAll([FromQuery] GetAllIncubadoraQuery query)
+        public ActionResult GetAll([FromQuery] GetAllStartupQuery query)
             => Ok(_incubadoraFacade.GetAll(query));
     }
 }
