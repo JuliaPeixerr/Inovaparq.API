@@ -6,7 +6,7 @@ using Incubadora.Project.Domain.Repository;
 using Incubadora.Project.Infrastructure.Facade;
 using Incubadora.Project.Infrastructure.Service;
 using Microsoft.EntityFrameworkCore;
-using Incubadora.Swagger;
+using Incubadora.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -27,8 +27,11 @@ builder.Services.AddSwaggerConfigurator();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IStartupRepository, StartupRepository>();
 builder.Services.AddScoped<IStartupStatusRepository, StartupStatusRepository>();
+builder.Services.AddScoped<IStartupGrupoRepository, StartupGrupoRepository>();
+
 builder.Services.AddScoped<IUsuarioFacade, UsuarioFacade>();
 builder.Services.AddScoped<IStartupFacade, StartupFacade>();
+
 builder.Services.AddScoped<ICryptographyService, CryptographyService>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -46,5 +49,6 @@ app.UseCors("AllowSpecificOrigin");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.Run();

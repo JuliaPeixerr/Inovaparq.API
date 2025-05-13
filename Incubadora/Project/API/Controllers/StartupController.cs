@@ -25,6 +25,13 @@ namespace Incubadora.Project.API.Controllers
         public ActionResult Get(int id)
             => Ok(_incubadoraFacade.Get(id));
 
+        [HttpDelete("{id}/remove")]
+        public ActionResult Remove(int id)
+        {
+            _incubadoraFacade.Remove(id);
+            return Ok();
+        }
+
         [HttpGet("all")]
         public ActionResult GetAll([FromQuery] GetAllStartupQuery query)
             => Ok(_incubadoraFacade.GetAll(query));

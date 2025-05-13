@@ -8,6 +8,7 @@ namespace Incubadora.Project.Domain.Infrastructure.Facade
     {
         Startup Save(SaveStartupCommand command);
         Startup Get(int id);
+        void Remove(int id);
         List<Startup> GetAll(GetAllStartupQuery query);
     }
 }

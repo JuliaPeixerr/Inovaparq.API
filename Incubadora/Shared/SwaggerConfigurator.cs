@@ -1,8 +1,8 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace Incubadora.Swagger
+namespace Incubadora.Shared
 {
-    public static class Configurator
+    public static class SwaggerConfigurator
     {
         public static IServiceCollection AddSwaggerConfigurator(this IServiceCollection services)
         {
